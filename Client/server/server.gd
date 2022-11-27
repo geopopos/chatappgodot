@@ -31,7 +31,6 @@ func _connect_to_server():
 	get_tree().get_root().get_node("Lobby").queue_free()
 
 func _player_connected(id):
-	local_player_id = id
 	print("Player " + str(id) + " Connected")
 
 func _player_disconnected(id):
@@ -56,3 +55,10 @@ func register_player():
 remote func player_joined(id, player_name):
 	var chatroom = get_tree().get_root().get_node("ChatRoom")
 	chatroom.player_joined(player_name)
+
+func send_message(message):
+	rpc_id(1, "send_message", local_player_id, message)
+
+remote func receive_message(id, message):
+	var chatroom = get_tree().get_root().get_node("ChatRoom")
+	chatroom.receive_message(message)

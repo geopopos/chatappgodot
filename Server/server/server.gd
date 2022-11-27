@@ -27,3 +27,8 @@ remote func set_player_name(id, player_data):
 	players[id] = player_data
 	print(players)
 	rpc("player_joined", id, player_data["player_name"])
+	
+remote func send_message(id, message):
+	var player_name = players[id]["player_name"]
+	var text = player_name + ": " + message
+	rpc("receive_message", id, text)
