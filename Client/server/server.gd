@@ -1,6 +1,6 @@
 extends Node
 
-const DEFAULT_IP = "127.0.0.1"
+const DEFAULT_IP = "170.187.139.169"
 const DEFAULT_PORT = 3234
 
 

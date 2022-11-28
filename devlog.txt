@@ -1,0 +1,3 @@
+[] add waiting queue for people above max_players
+   [] on player disconnected pop first player from queue
+   [] update other players on queue size + their position
